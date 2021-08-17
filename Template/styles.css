@@ -1,0 +1,133 @@
+/* GENERAL */
+
+body
+{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #444;
+}
+
+#header_box
+{
+    border: 2px solid black;
+    width: 80%;
+    margin: auto;
+}
+
+h1
+{
+    font-size: 45px;
+    text-align: center;
+    margin: auto;
+}
+
+a
+{
+    text-decoration: none;
+    color: #444;
+}
+
+nav
+{
+    float: right;
+    margin-top: -48px;
+
+}
+
+nav ul li
+{
+    display: inline-block;
+    float: left;
+}
+
+nav ul li a
+{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.orange
+{
+    color: #ff7a00;
+}
+
+#box
+{
+    width: 80%;
+    height: 700px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+/* INDEX */
+
+#index_registration
+{
+    float: left;
+    width: 60%;
+    margin-left: 100px;
+    margin-top: 100px;
+    font-size: 25px;
+}
+
+#index_registration a input
+{
+    font-size: 25px;
+    margin-left: 100px;
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#index_connection
+{
+    margin-left: 500px;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+#index_connection input
+{
+    margin-bottom: 15px;
+    flex-direction: column;
+    font-size: 25px;
+    text-align: center;
+
+}
+
+#index_connection a input
+{
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* REGISTRATION */
+
+#registration
+{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 50px;
+}
+
+#registration input
+{
+    width: 500px;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+
+#registration a input
+{
+    width: 250px;
+    height: 35px;
+    text-align: center;
+    font-size: 25px;
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 5px;
+}
+
