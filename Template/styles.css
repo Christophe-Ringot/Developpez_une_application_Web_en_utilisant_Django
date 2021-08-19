@@ -131,3 +131,243 @@ nav ul li a
     border-radius: 5px;
 }
 
+/* FLUX */
+
+#flux_box
+{
+    width: 80%;
+    height: 1500px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+#flux_button
+{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#flux_button a input
+{
+    width: 250px;
+    height: 35px;
+    text-align: center;
+    font-size: 20px;
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 50px;
+}
+
+#your_critical_box
+{
+    width: 80%;
+    height: 300px;
+    border: 2px solid black;
+    margin: 20px auto;
+}
+
+#critical_asked_box
+{
+    width: 80%;
+    height: 300px;
+    border: 2px solid black;
+    margin: 20px auto;
+}
+
+#critical_blocked_box
+{
+    width: 80%;
+    height: 300px;
+    border: 2px solid black;
+    margin: 20px auto;
+}
+
+#review_box
+{
+    width: 80%;
+    height: 300px;
+    border: 2px solid black;
+    margin: 20px auto;
+}
+
+/* SUBSCRIBE */
+
+#follow_subscribers
+{
+    text-align: center;
+    font-size: 25px;
+}
+
+#follow_subscribers input
+{
+    width: 1000px;
+    height: 35px;
+    text-align: center;
+    font-size: 35px;
+}
+
+#follow_subscribers a input
+{
+    width: 150px;
+    height: 35px;
+    font-size: 20px;
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#subscriptions
+{
+    text-align: center;
+    font-size: 25px;
+}
+
+#subscriptions_box
+{
+    width: 65%;
+    height: 150px;
+    border: 2px solid black;
+    margin: 20px auto;
+}
+
+#subscribers
+{
+    text-align: center;
+    font-size: 25px;
+}
+
+#subscribers_box
+{
+    width: 65%;
+    height: 100px;
+    border: 2px solid black;
+    margin: 20px auto;
+}
+
+/* EDIT TICKET */
+
+#ticket h2
+{
+    text-align: center;
+}
+
+#ticket_name
+{
+    width: 65%;
+    height: 25px;
+    text-align: center;
+    margin-left: 250px;
+}
+
+#ticket_description
+{
+    width: 65%;
+    height: 300px;
+    margin-left: 250px;
+}
+
+#ticket p
+{
+    margin-left: 250px;
+    font-weight: bold;
+}
+
+#download input
+{
+    width: 190px;
+    height: 35px;
+    font-size: 20px;
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 5px;
+    margin-left: 250px;
+}
+
+#send input
+{
+    width: 150px;
+    height: 35px;
+    font-size: 20px;
+    background: #ff7a00;
+    color: #fff;
+    border-radius: 5px;
+    margin-left: 750px;
+}
+
+/* CREATE CRITICAL */
+
+#create_critical_box
+{
+    width: 80%;
+    height: 1250px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+#create_critical_box h2
+{
+    text-align: center;
+}
+
+#library_box
+{
+    width: 80%;
+    height: 560px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+#library_box p
+{
+    margin-left: 250px;
+}
+
+#critical_box
+{
+    width: 80%;
+    height: 600px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+#critical_box p
+{
+    margin-left: 250px;
+}
+
+#critical_box #critical_name
+{
+    width: 65%;
+    height: 25px;
+    text-align: center;
+    margin-left: 250px;
+}
+
+#critical_box #checkbox
+{
+   margin-left: 250px;
+   height: 35px;
+}
+
+#critical_box #critical_commantary
+{
+    width: 65%;
+    height: 300px;
+    margin-left: 250px;
+}
+
+#critical_box #send input
+{
+    margin-top: 5px;
+    margin-left: 980px;
+}
+
+#respond_box
+{
+    width: 65%;
+    height: 450px;
+    border: 2px solid black;
+    margin: auto;
+}
