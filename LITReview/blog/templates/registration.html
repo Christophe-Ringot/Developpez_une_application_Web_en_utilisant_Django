@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <link href="LITReview/static/styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Crete+Round"
+          rel="stylesheet">
+        <meta charset="UTF-8">
+        <title>LITReview</title>
+    </head>
+
+    <body>
+
+        <header>
+        <div class="wrapper">
+            <h1>LITReview<span class="orange">.</span></h1>
+        </div>
+        </header>
+
+        <section id="box">
+            <section id="registration">
+                <p>Inscrivez-vous</p>
+                <input name="username" placeholder="Nom d'utilisateur" class="form-control"><br/>
+                <input name="email" type='email' placeholder='email' class="form-control"><br/>
+                <input name='password' placeholder="Mot de passe" class="form-control"><br/>
+                <input name="confirmation" placeholder="Confirmer mot de passe" class="form-control"><br/>
+                <a href="{% url 'index' %}"><button>Retourner</button></a>
+                <button>s'inscrire</button>
+            </section>
+        </section>
+    </body>
+</html>

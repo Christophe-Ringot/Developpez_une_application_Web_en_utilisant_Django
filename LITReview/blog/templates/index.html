@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link href="static/CSS/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round"
+          rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>LITReview</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="wrapper">
+        <section id="header_box">
+            <h1>LITReview<span class="orange">.</span></h1>
+        </section>
+      </div>
+    </header>
+
+    <section id="box">
+      <section id="index_registration">
+        <p>Inscrivez-vous maintenant</p>
+        <a href="{% url 'registration' %}">
+          <input type="button" value="S'inscrire">
+        </a>
+      </section>
+
+      <section id="index_connection">
+        <p>Connectez-vous</p>
+        <input type="text" placeholder="Nom d'utilisateur"><br/>
+        <input type="text" placeholder="Mot de passe"><br/>
+        <a href="{% url 'post' %}">
+            <input type="button" value="Se connecter">
+        </a>
+      </section>
+    </section>
+
+  </body>
+</html>

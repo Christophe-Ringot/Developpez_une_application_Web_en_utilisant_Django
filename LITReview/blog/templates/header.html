@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>{% block title %}LITReview{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round"
+          rel="stylesheet">
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+    {% block script %}
+    {% endblock %}
+</head>
+
+<body>
+
+    <header>
+      <div class="wrapper">
+        <section id="header_box">
+            <h1>LITReview<span class="orange">.</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="flux.html">Flux</a></li>
+                    <li><a href="post.html">Posts</a> </li>
+                    <li><a href="subscribe.html">Abonnements</a> </li>
+                    <li><a href="{% url 'logout' %}">Se déconnecter</a> </li>
+                </ul>
+            </nav>
+        </section>
+      </div>
+    </header>
+
+    <div class="body">
+        {% block body %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

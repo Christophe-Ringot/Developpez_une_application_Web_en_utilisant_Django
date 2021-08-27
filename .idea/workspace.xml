@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="45a41e48-4201-41f5-884f-268bf80fe7c1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/LITReview/LITReview/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/LITReview/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/LITReview/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/LITReview/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/LITReview/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/accounts/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/accounts/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/accounts/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/accounts/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/accounts/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/accounts/templates/accounts/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/accounts/templates/accounts/registration.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/accounts/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/accounts/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/accounts/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/blog/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/blog/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/blog/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/blog/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/blog/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/blog/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/blog/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LITReview/static/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template/create_critical.html" beforeDir="false" afterPath="$PROJECT_DIR$/LITReview/blog/templates/create_critical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template/edit_critical.html" beforeDir="false" afterPath="$PROJECT_DIR$/LITReview/blog/templates/edit_critical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template/edit_ticket.html" beforeDir="false" afterPath="$PROJECT_DIR$/LITReview/blog/templates/edit_ticket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template/flux.html" beforeDir="false" afterPath="$PROJECT_DIR$/LITReview/blog/templates/flux.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/LITReview/blog/templates/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template/subscribe.html" beforeDir="false" afterPath="$PROJECT_DIR$/LITReview/blog/templates/subscribe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template/ticket.html" beforeDir="false" afterPath="$PROJECT_DIR$/LITReview/blog/templates/ticket.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template/ticket_respond.html" beforeDir="false" afterPath="$PROJECT_DIR$/LITReview/blog/templates/ticket_respond.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1xD8TBd4slJMUXqMvC9ghFexKtk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../oc_p9_litreview" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/LITReview/blog" />
+      <recent name="$PROJECT_DIR$/LITReview/static/CSS" />
+      <recent name="$PROJECT_DIR$/LITReview/blog/templates" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="45a41e48-4201-41f5-884f-268bf80fe7c1" name="Changes" comment="" />
+      <created>1629878306330</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1629878306330</updated>
+      <workItem from="1629878326528" duration="14368000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
