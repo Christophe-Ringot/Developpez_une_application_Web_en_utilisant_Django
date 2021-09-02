@@ -1,46 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link href="../LITReview/static/css/styles.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Crete+Round"
-          rel="stylesheet">
-        <meta charset="UTF-8">
-        <title>LITReview</title>
-    </head>
+{% extends "header.html" %}
 
-    <body>
-
-    <header>
-      <div class="wrapper">
-        <section id="header_box">
-            <h1>LITReview<span class="orange">.</span></h1>
-            <nav>
-                <ul>
-                    <li><a href="flux.html">Flux</a></li>
-                    <li><a href="post.html">Posts</a> </li>
-                    <li><a href="subscribe.html">Abonnements</a> </li>
-                    <li><a href="../LITReview/accounts/templates/accounts/index.html">Se déconnecter</a> </li>
-                </ul>
-            </nav>
-        </section>
-      </div>
-    </header>
-
-    <section id="box">
-
-        <section id="ticket">
-            <h2>Créer un ticket</h2>
-            <p>Titre</p>
-            <input type="text" id="ticket_name"><br/>
-            <p>Description</p>
-            <input type="text" id="ticket_description"><br/>
-            <p>Image</p>
-            <a id="download"><input type="button"
-                                       value="Télécharger fichier"></a>
-            <a id="send"><input type="button" value="Envoyer"></a>
-        </section>
-
-    </section>
-
-    </body>
-</html>
+{% block body %}
+    <div style="border: 2px solid black;">
+        <h4 style="text-align: center">Créer un ticket</h4>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <div>
+                    <h5>Titre</h5>
+                    {{ form_ticket.title }}
+                    <h5>Description</h5>
+                    {{ form_ticket.description }}
+                    <br>
+                    {{ form_ticket.image }}
+                    {{ form_ticket.user.as_hidden }}
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary">Envoyer</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

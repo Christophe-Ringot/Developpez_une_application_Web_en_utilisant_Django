@@ -9,24 +9,23 @@
         <title>LITReview</title>
     </head>
 
-    <body>
-
-        <header>
-        <div class="wrapper">
-            <h1>LITReview<span class="orange">.</span></h1>
+{% block body %}
+    <h2 class="form-signin-heading" style="text-align: center">Inscrivez-vous</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <input name="username" placeholder="Nom d'utilisateur" class="form-control" style="text-align: center"><br>
+            <input name="email" type="email" placeholder="Email" class="form-control" style="text-align: center"><br>
+            <input name="password" type="password" placeholder="Mot de Passe" class="form-control" style="text-align: center"><br>
+            <input name="confirmation" type="password" placeholder="Confirmer mot de passe" class="form-control" style="text-align: center"><br>
+            <div class="row">
+                <div class="span6" style="margin-left: 600px">
+                    <a href="{% url 'index' %}"><button class="btn btn-large btn-primary">Retourner</button></a>
+                </div>
+                <div class="span6" style="margin-left: 1200px">
+                    <button class="btn btn-large btn-primary">S'inscrire</button>
+                </div>
+            </div>
         </div>
-        </header>
-
-        <section id="box">
-            <section id="registration">
-                <p>Inscrivez-vous</p>
-                <input name="username" placeholder="Nom d'utilisateur" class="form-control"><br/>
-                <input name="email" type='email' placeholder='email' class="form-control"><br/>
-                <input name='password' placeholder="Mot de passe" class="form-control"><br/>
-                <input name="confirmation" placeholder="Confirmer mot de passe" class="form-control"><br/>
-                <a href="{% url 'index' %}"><button>Retourner</button></a>
-                <button>s'inscrire</button>
-            </section>
-        </section>
-    </body>
-</html>
+    </form>
+{% endblock %}

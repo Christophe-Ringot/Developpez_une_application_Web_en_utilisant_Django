@@ -1,74 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link href="../LITReview/static/css/styles.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Crete+Round"
-          rel="stylesheet">
-        <meta charset="UTF-8">
-        <title>LITReview</title>
-    </head>
+{% extends "header.html" %}
 
-    <body>
-
-    <header>
-      <div class="wrapper">
-        <section id="header_box">
-            <h1>LITReview<span class="orange">.</span></h1>
-            <nav>
-                <ul>
-                    <li><a href="flux.html">Flux</a></li>
-                    <li><a href="post.html">Posts</a> </li>
-                    <li><a href="subscribe.html">Abonnements</a> </li>
-                    <li><a href="../LITReview/accounts/templates/accounts/index.html">Se déconnecter</a> </li>
-                </ul>
-            </nav>
-        </section>
-      </div>
-    </header>
-
-    <section id="create_critical_box">
-        <h2>créer une critique</h2>
-
-        <section id="library_box">
-
-            <h4>Livre / Article</h4>
-            <p>Titre</p>
-            <input type="text" id="ticket_name"><br/>
-            <p>Description</p>
-            <input type="text" id="ticket_description"><br/>
-            <p>Image</p>
-            <a id="download"><input type="button"
-                                       value="Télécharger fichier"></a>
-
-        </section>
-
-        <section id="critical_box">
-
-            <h4>critique</h4>
-            <p>Titre</p>
-            <input type="text" id="critical_name"><br/>
-            <p>Note</p>
-            <section id="checkbox">
-                <input type="checkbox" id="0">
-                <label for="0">0</label>
-                <input type="checkbox" id="1">
-                <label for="1">1</label>
-                <input type="checkbox" id="2">
-                <label for="0">2</label>
-                <input type="checkbox" id="3">
-                <label for="0">3</label>
-                <input type="checkbox" id="4">
-                <label for="0">4</label>
-                <input type="checkbox" id="5">
-                <label for="0">5</label>
-            </section>
-            <p>Description</p>
-            <input type="text" id="critical_commantary"><br/>
-            <a id="send"><input type="button" value="Envoyer"></a>
-
-        </section>
-
-    </section>
-
-    </body>
-</html>
+{% block body %}
+    <h4 style="text-align: center">Modifier votre critique</h4>
+    <div style="border: 2px solid black; margin: 20px">
+        <div>
+            <h5>Vous êtes en train de poster en réponse à:</h5>
+            <div style="border: 2px solid black; margin: 30px">
+                {{ review.ticket.user }} a demandé une critique<br>
+                {{ review.ticket.title }}<br>
+                {{ review.ticket.description }}<br>
+                <img src="{{ review.ticket.image.url }}" widht="200px" height="200px"><br>
+            </div>
+        </div>
+        <br><hr><br>
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <div>
+                    Titre: {{ form_review.headline }}<br>
+                    Commentaire: {{ form_review.body }}<br>
+                    Note: {{ form_review.rating }}<br>
+                    {{ form_review.ticket.as_hidden }}
+                    {{ form_review.user.as_hidden }}
+                </div>
+                <button>Envoyer</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

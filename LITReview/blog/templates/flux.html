@@ -1,57 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link href="../LITReview/static/css/styles.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Crete+Round"
-          rel="stylesheet">
-        <meta charset="UTF-8">
-        <title>LITReview</title>
-    </head>
+{% extends "header.html" %}
 
-    <body>
+{% block body %}
+    <div class="py-5">
+        <div class="container" style="text-align: center">
 
-    <header>
-      <div class="wrapper">
-        <section id="header_box">
-            <h1>LITReview<span class="orange">.</span></h1>
-            <nav>
-                <ul>
-                    <li><a href="flux.html">Flux</a></li>
-                    <li><a href="post.html">Posts</a> </li>
-                    <li><a href="subscribe.html">Abonnements</a> </li>
-                    <li><a href="../LITReview/accounts/templates/accounts/index.html">Se déconnecter</a> </li>
-                </ul>
-            </nav>
-        </section>
-      </div>
-    </header>
+            <a href={% url 'edit_ticket' %}><button class="btn btn-large btn-primary">Demander une critique</button></a>
+            <a href={% url 'edit_critical' %}><button class="btn btn-large btn-primary">Créer une critique</button></a>
 
-    <section id="flux_box">
+            <br><hr>
 
-        <section id="flux_button">
-            <a href="ticket.html">
-                <input type="button" value="Demander une critique"></a>
-            <a href="create_critical.html">
-                <input type="button" value="Créer une critique"></a>
-        </section>
-
-        <section id="your_critical_box">
-
-        </section>
-
-        <section id="critical_asked_box">
-
-        </section>
-
-        <section id="critical_blocked_box">
-
-        </section>
-
-        <section id="review_box">
-
-        </section>
-
-    </section>
-
-    </body>
-</html>
+            {% for ticket in tickets %}
+                {% if ticket.review.exists %}
+                {% else %}
+                    <div style="border: 2px solid black;">
+                        Vous avez publié un ticket
+                        {{ ticket.title }}<br>
+                        {{ ticket.description }}<br>
+                        <img src="{{ ticket.image.url }}" widht="200px" height="200px"><br>
+                        {{ ticket.time_created }}<br>
+                        {% if ticket.review.exists %}
+                        {% else %}
+                            <a href={% url 'ticket_respond' id=ticket.id %}><button class="btn btn-large btn-primary">Répondre à un ticket</button></a>
+                        {% endif %}
+                    </div>
+                    <br><hr>
+                {% endif %}
+            {% endfor %}
+            <br><hr><br>
+            {% for review in reviews %}
+                <div style="border: 2px solid black;">
+                    Vous avez publié une critique<br>
+                    {{ review.headline }} - {{ review.rating }}<br>
+                    {{ review.body }}<br>
+                    {{ review.time_created }}<br>
+                    <div style="border: 2px solid black; margin: 30px">
+                        Ticket - {{ review.ticket.user }}<br>
+                        {{ review.ticket.title }}<br>
+                        {{ review.ticket.description }}<br>
+                        <img src="{{ review.ticket.image.url }}" widht="200px" height="200px"><br>
+                        {{ review.ticket.time_created }}<br>
+                    </div>
+                </div>
+                <hr>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
