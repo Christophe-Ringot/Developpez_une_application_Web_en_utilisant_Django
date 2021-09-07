@@ -1,61 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "header.html" %}
 
-    <head>
-        <link href="../LITReview/static/css/styles.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Crete+Round"
-          rel="stylesheet">
-        <meta charset="UTF-8">
-        <title>LITReview</title>
-    </head>
+{% block body %}
 
-    <body>
-
-    <header>
-      <div class="wrapper">
-        <section id="header_box">
-            <h1>LITReview<span class="orange">.</span></h1>
-            <nav>
-                <ul>
-                    <li><a href="flux.html">Flux</a></li>
-                    <li><a href="post.html">Posts</a> </li>
-                    <li><a href="subscribe.html">Abonnements</a> </li>
-                    <li><a href="../LITReview/accounts/templates/accounts/index.html">Se déconnecter</a> </li>
-                </ul>
-            </nav>
-        </section>
-      </div>
-    </header>
-
-    <section id="box">
-
-        <section id="follow_subscribers">
-            <p>Suivre d'autres utilisateurs</p>
-            <input type="text" placeholder="Nom d'utilisateur"><br/>
-            <a><input type="button" value="Envoyer"></a>
+<section style="border: 2px solid black; margin-top: 50px">
+    <section style="text-align: center; margin-top: 75px">
+        <section id="subscribe_to">
+            <h2 style="margin-bottom: 35px; font-size: 25px">Suivre d'autres utilisateurs</h2>
+            <form action={% url "add_user_follow" %} method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <input name="username_search" id="username_search" placeholder="Nom d'utilisateur"
+                    style="width:500px; height: 35px; font-size: 20px">
+                    <button id="button_search" style="vertical-align: top; height: 41px">Envoyer</button>
+                </div>
+            </form>
         </section>
 
-        <section id="subscriptions">
-
-            <p>Abonnements</p>
-
-            <section id="subscriptions_box">
-
-            </section>
-
+        <section id="subscribers" style="text-align: center; margin-top: 50px">
+            <h2 style="margin-bottom: 35px; font-size: 25px">Abonnements</h2>
+            {% for following in following %}
+                <div class="row">
+                    <div style="border: 1px solid grey; width: 500px; height: 41px; margin-left: 565px; margin-top: 10px">
+                        <h2 style="font-size: 20px; margin-top: 7px">{{ following.followed_user }}</h2>
+                    </div>
+                    <form method="post" style="margin-top: -42px; margin-right: -510px" action={% url "remove_user_follow" %}>
+                        {% csrf_token %}
+                        <input type="hidden" name="followed_user" value="{{ following.followed_user.id }}">
+                        <button style=" background: #ff7a00; color: white; font-size: 18px; border-radius: 5px; width: 150px; height: 41px">Se désabonner</button>
+                    </form>
+                </div>
+            {% endfor %}
         </section>
 
-        <section id="subscribers">
-
-            <p>Abonnés</p>
-
-            <section id="subscribers_box">
-
-            </section>
-
+        <section id="followers" style="margin-top: 50px">
+            <h2 style="margin-bottom: 35px; font-size: 25px">Abonnés</h2>
+            {% for follower in followers %}
+                <div style="border: 1px solid grey; width: 650px; height: 41px; margin-left: 565px; margin-bottom: 15px">
+                    <p style="text-align: center; font-size: 20px; font-weight: bold; margin-top: 7px">{{ follower.user }}</p>
+                </div>
+            {% endfor %}
         </section>
-
     </section>
-
-    </body>
-</html>
+</section>
+{% endblock %}

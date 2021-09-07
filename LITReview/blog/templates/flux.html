@@ -1,11 +1,11 @@
 {% extends "header.html" %}
 
 {% block body %}
-    <div class="py-5">
+    <section id="flux">
         <div class="container" style="text-align: center">
 
-            <a href={% url 'edit_ticket' %}><button class="btn btn-large btn-primary">Demander une critique</button></a>
-            <a href={% url 'edit_critical' %}><button class="btn btn-large btn-primary">Créer une critique</button></a>
+            <a href={% url 'create-ticket' %}><button>Demander une critique</button></a>
+            <a href={% url 'create-review' %}><button>Créer une critique</button></a>
 
             <br><hr>
 
@@ -20,7 +20,7 @@
                         {{ ticket.time_created }}<br>
                         {% if ticket.review.exists %}
                         {% else %}
-                            <a href={% url 'ticket_respond' id=ticket.id %}><button class="btn btn-large btn-primary">Répondre à un ticket</button></a>
+                            <a href={% url 'create-review-ticket' id=ticket.id %}><button class="btn btn-large btn-primary">Répondre à un ticket</button></a>
                         {% endif %}
                     </div>
                     <br><hr>
@@ -44,5 +44,5 @@
                 <hr>
             {% endfor %}
         </div>
-    </div>
+    </section>
 {% endblock %}

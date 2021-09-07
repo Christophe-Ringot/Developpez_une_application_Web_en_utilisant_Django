@@ -1,0 +1,23 @@
+{% extends "header.html" %}
+
+{% block body %}
+    <section id="registration">
+        <h1>Inscrivez-vous</h1>
+        <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <input name="username" placeholder="Nom d'utilisateur" class="form-control"><br>
+            <input name="email" type="email" placeholder="Email" class="form-control"><br>
+            <input name="password" type="password" placeholder="Mot de Passe" class="form-control"><br>
+            <input name="confirmation" type="password" placeholder="Confirmer mot de passe" class="form-control"><br>
+            <div class="row">
+                <div class="span6">
+                    <a href="{% url 'index' %}"><button>Retour</button></a>
+                    <button class="btn btn-large btn-primary">S'inscrire</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </section>
+
+{% endblock %}

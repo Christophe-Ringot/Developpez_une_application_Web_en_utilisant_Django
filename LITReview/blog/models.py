@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
+
+
 # Create your models here.
 
 
@@ -15,7 +17,7 @@ class Ticket(models.Model):
     title = models.CharField(max_length=128)
     description = models.TextField(max_length=2048, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.ImageField(null=True, blank=True, upload_to="media/")
+    image = models.ImageField(null=True, blank=True, upload_to="images/")
     time_created = models.DateTimeField(auto_now_add=True)
 
 

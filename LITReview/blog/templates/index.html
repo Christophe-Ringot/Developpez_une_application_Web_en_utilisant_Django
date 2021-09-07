@@ -1,46 +1,25 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <link href="static/CSS/styles.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Crete+Round"
-          rel="stylesheet">
-    <meta charset="UTF-8">
-    <title>LITReview</title>
-  </head>
+{% extends "header.html" %}
 
-  <body>
+{% block body %}
+    {% if user is authenticated %}
+        {% url 'feed' %}
+    {% endif %}
 
-    <header>
-      <div class="wrapper">
-        <section id="header_box">
-            <h1>LITReview<span class="orange">.</span></h1>
-        </section>
-      </div>
-    </header>
-
-    <section id="box">
-      <section id="index_registration">
-        <p>Inscrivez-vous maintenant</p>
-        <a href="{% url 'registration' %}">
-          <input type="button" value="S'inscrire">
-        </a>
-      </section>
-
-        <div class="span6" style="margin-left: 500px; margin-top: 50px">
-            <h2 class="form-signin-heading">Connectez vous</h2>
-            <form method="post" class="form-signin">
-                 {% csrf_token %}
-                 <div class="mb-3">
-                     <input name="username" class="form-control" placeholder="Nom d'utilisateur">
-                     <input name="password" class="form-control" placeholder="Mot de Passe">
-                     <button class="btn btn-large btn-primary" style="margin-left: 100px">Se connecter</button>
-                 </div>
-            </form>
-        </div>
-    </div>
-        </a>
-      </section>
+    <section id="index_registration">
+        <h2>Inscrivez-vous maintenant</h2>
+        <a href="{% url 'register' %}"><button>S'inscrire</button></a>
     </section>
 
-  </body>
-</html>
+    <section id="index_connection">
+        <h2>Connectez vous</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input name="username" class="form-control" placeholder="Nom d'utilisateur">
+                <input name="password" type="password" class="form-control" placeholder="Mot de Passe">
+                <button>Se connecter</button>
+            </div>
+        </form>
+    </section>
+
+{% endblock %}
