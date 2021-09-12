@@ -9,7 +9,8 @@
             <form action={% url "add_user_follow" %} method="post">
                 {% csrf_token %}
                 <div class="row">
-                    <input name="username_search" id="username_search" placeholder="Nom d'utilisateur"
+                    <input name="username_search" id="username_search"
+                           placeholder="Nom d'utilisateur"
                     style="width:500px; height: 35px; font-size: 20px">
                     <button id="button_search" style="vertical-align: top; height: 41px">Envoyer</button>
                 </div>
@@ -23,9 +24,11 @@
                     <div style="border: 1px solid grey; width: 500px; height: 41px; margin-left: 565px; margin-top: 10px">
                         <h2 style="font-size: 20px; margin-top: 7px">{{ following.followed_user }}</h2>
                     </div>
-                    <form method="post" style="margin-top: -42px; margin-right: -510px" action={% url "remove_user_follow" %}>
+                    <form method="post" style="margin-top: -42px; margin-right: -510px"
+                          action={% url "remove_user_follow" %}>
                         {% csrf_token %}
-                        <input type="hidden" name="followed_user" value="{{ following.followed_user.id }}">
+                        <input type="hidden" name="followed_user"
+                               value="{{ following.followed_user.id }}">
                         <button style=" background: #ff7a00; color: white; font-size: 18px; border-radius: 5px; width: 150px; height: 41px">Se désabonner</button>
                     </form>
                 </div>

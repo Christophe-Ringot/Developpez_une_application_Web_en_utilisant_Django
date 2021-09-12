@@ -1,26 +1,27 @@
-from django.urls import path
-from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib import admin
-
+from django.conf import settings
+from django.urls import path
 from . import views
+
 
 urlpatterns = [
     path("", views.index, name="index"),
     path("register", views.register, name="register"),
     path("logout", views.logout_view, name="logout"),
-    path("create-review", views.create_review, name="create-review"),
-    path("create-review-ticket/<int:id>", views.create_review_ticket, name="create-review-ticket"),
+    path("create_review", views.create_review, name="create_review"),
+    path("reply/<int:id>", views.reply, name="reply"),
     path("flux", views.flux, name="flux"),
     path("subscribe", views.subscribe, name="subscribe"),
-    path("update-review/<int:review_id>", views.update_review, name="update-review"),
-    path("update-ticket/<int:ticket_id>", views.update_ticket, name="update-ticket"),
+    path("update_review/<int:review_id>", views.update_review,
+         name="update_review"),
+    path("update_ticket/<int:ticket_id>", views.update_ticket,
+         name="update_ticket"),
     path("posts", views.posts, name="posts"),
-    path("create-ticket", views.create_ticket, name="create-ticket"),
-
-    # Sub path actions
-    path("subscribe/add_user_follow", views.add_user_follow, name="add_user_follow"),
-    path("subscribe/remove_user_follow", views.remove_user_follow, name="remove_user_follow"),
+    path("create_ticket", views.create_ticket, name="create_ticket"),
+    path("subscribe/add_user_follow", views.add_user_follow,
+         name="add_user_follow"),
+    path("subscribe/remove_user_follow", views.remove_user_follow,
+         name="remove_user_follow"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

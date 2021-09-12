@@ -2,47 +2,54 @@
 
 {% block body %}
     <section id="flux">
-        <div class="container" style="text-align: center">
+        <div style="text-align: center">
 
-            <a href={% url 'create-ticket' %}><button>Demander une critique</button></a>
-            <a href={% url 'create-review' %}><button>Créer une critique</button></a>
+            <a href={% url 'create_ticket' %}>
+                <button>Demander une critique</button></a>
+            <a href={% url 'create_review' %}>
+                <button>Créer une critique</button></a>
 
-            <br><hr>
 
             {% for ticket in tickets %}
                 {% if ticket.review.exists %}
                 {% else %}
-                    <div style="border: 2px solid black;">
-                        Vous avez publié un ticket
-                        {{ ticket.title }}<br>
-                        {{ ticket.description }}<br>
-                        <img src="{{ ticket.image.url }}" widht="200px" height="200px"><br>
-                        {{ ticket.time_created }}<br>
+                    <div style="border: 1px solid grey; margin: 50px 450px 50px 450px; text-align: center">
+                        <p style="font-weight: bold">Vous avez publié un ticket :</p>
+                        <p>{{ ticket.title }}</p>
+                        <p>{{ ticket.description }}</p>
+                        <img src="{{ ticket.image.url }}"
+                             widht="300px" height="300px"><br>
+                        <p>{{ ticket.time_created }}</p>
                         {% if ticket.review.exists %}
                         {% else %}
-                            <a href={% url 'create-review-ticket' id=ticket.id %}><button class="btn btn-large btn-primary">Répondre à un ticket</button></a>
+                            <a href={% url 'reply' id=ticket.id %}>
+                                <button style="margin-top: 10px; margin-bottom: 10px">
+                                    Répondre à un ticket
+                                </button>
+                            </a>
                         {% endif %}
                     </div>
-                    <br><hr>
                 {% endif %}
             {% endfor %}
-            <br><hr><br>
+
             {% for review in reviews %}
-                <div style="border: 2px solid black;">
-                    Vous avez publié une critique<br>
-                    {{ review.headline }} - {{ review.rating }}<br>
-                    {{ review.body }}<br>
-                    {{ review.time_created }}<br>
-                    <div style="border: 2px solid black; margin: 30px">
-                        Ticket - {{ review.ticket.user }}<br>
-                        {{ review.ticket.title }}<br>
-                        {{ review.ticket.description }}<br>
-                        <img src="{{ review.ticket.image.url }}" widht="200px" height="200px"><br>
-                        {{ review.ticket.time_created }}<br>
+                <div style="border: 1px solid grey; margin: 50px 450px 50px 450px; text-align: center">
+                    <p style="font-weight: bold">Vous avez publié une critique :</p>
+                    <p>{{ review.headline }} - {{ review.rating }}/5</p>
+                    <p>{{ review.body }}</p>
+                    <p>{{ review.time_created }}</p>
+                    <div style="border: 1px solid grey">
+                        <p style="font-weight: bold">Ticket de {{ review.ticket.user }} :</p>
+                        <p>{{ review.ticket.title }}</p>
+                        <p>{{ review.ticket.description }}</p>
+                        <img src="{{ review.ticket.image.url }}"
+                             widht="300px" height="300px"><br>
+                        <p>{{ review.ticket.time_created }}</p>
                     </div>
                 </div>
                 <hr>
             {% endfor %}
+
         </div>
     </section>
 {% endblock %}

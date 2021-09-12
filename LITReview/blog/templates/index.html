@@ -10,14 +10,16 @@
         <a href="{% url 'register' %}"><button>S'inscrire</button></a>
     </section>
 
-    <section id="index_connection">
+    <section id="index_connection" style="margin-top: 150px">
         <h2>Connectez vous</h2>
         <form method="post">
             {% csrf_token %}
             <div class="mb-3">
-                <input name="username" class="form-control" placeholder="Nom d'utilisateur">
-                <input name="password" type="password" class="form-control" placeholder="Mot de Passe">
-                <button>Se connecter</button>
+                <input name="username" class="form-control"
+                       placeholder="Nom d'utilisateur">
+                <input name="password" type="password" class="form-control"
+                       placeholder="Mot de Passe">
+                <button style="margin-right: 150px">Se connecter</button>
             </div>
         </form>
     </section>

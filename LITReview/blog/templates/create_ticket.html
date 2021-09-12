@@ -1,15 +1,15 @@
 {% extends "header.html" %}
 
 {% block body %}
-    <div style="border: 2px solid black;">
-        <h4 style="text-align: center">Créer un ticket</h4>
+    <div style="border: 1px solid grey; margin: 50px 450px 50px 450px; text-align: center">
+        <h2>Créer un ticket</h2>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div>
                 <div>
-                    <h5>Titre</h5>
+                    <h2>Titre :</h2>
                     {{ form_ticket.title }}
-                    <h5>Description</h5>
+                    <h2>Description :</h2>
                     {{ form_ticket.description }}
                     <br>
                     {{ form_ticket.image }}
@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-primary">Envoyer</button>
+                <button style="color: white; background: #ff7a00; border-radius: 5px; width: 200px; height: 40px; font-size: 20px; margin-bottom: 10px; margin-top: 10px">Envoyer</button>
             </div>
         </form>
     </div>

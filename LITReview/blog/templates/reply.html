@@ -1,0 +1,55 @@
+{% extends "header.html" %}
+
+{% block body %}
+    <div style="border: 1px solid grey; margin: 50px 450px 50px 450px; text-align: center">
+        <h2>Créer une critique</h2>
+        <h2>Vous êtes en train de poster en réponse à :</h2>
+        <div style="border: 1px solid grey; margin: 20px">
+            <p style="font-weight: bold">{{ ticket.user }} a demandé une critique :</p>
+            <p>{{ ticket.title }}</p>
+            <p>{{ ticket.description }}</p>
+            <img src="{{ ticket.image.url }}" widht="300px" height="300px"><br>
+            <p>{{ ticket.time_created }}</p>
+        </div>
+        <hr>
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <div>
+                    <h2>Titre :</h2>
+                    <input name="headline" id="title_review">
+                </div>
+                <div>
+                    <h2>Note :</h2>
+                    <span>
+                        <input type="radio" id="grade_0"
+                               name="rating" value="0">
+                        <label for="grade_0">-0</label>
+                        <input type="radio" id="grade_1"
+                               name="rating" value="1">
+                        <label for="grade_1">-1</label>
+                        <input type="radio" id="grade_2"
+                               name="rating" value="2">
+                        <label for="grade_2">-2</label>
+                        <input type="radio" id="grade_3"
+                               name="rating" value="3">
+                        <label for="grade_3">-3</label>
+                        <input type="radio" id="grade_4"
+                               name="rating" value="4">
+                        <label for="grade_4">-4</label>
+                        <input type="radio" id="grade_5"
+                               name="rating" value="5">
+                        <label for="grade_5">-5</label>
+                    </span>
+                </div>
+                <div>
+                    <h2>Commentaire :</h2>
+                    <textarea name="body" id="comment" rows="10" cols="50">
+
+                    </textarea>
+                </div>
+                <button style="color: white; background: #ff7a00; border-radius: 5px; width: 200px; height: 40px; font-size: 20px; margin-bottom: 10px; margin-top: 10px">Envoyer</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

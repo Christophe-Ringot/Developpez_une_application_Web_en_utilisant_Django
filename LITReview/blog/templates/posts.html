@@ -5,16 +5,19 @@
 <section style="text-align: center">
     <h1 style="margin-top: 50px; font-size: 40px">Vos posts</h1>
 
-    <div style="border: 1px solid grey; margin-top: 50px">
+    <div style="border: 1px solid grey; margin: 50px 450px 50px 450px; text-align: center">
 
         {% for ticket in tickets %}
             <div>
                 <p style="font-weight: bold">Vous avez publié un ticket</p>
                 <p><span style="font-weight: bold">Titre</span> : {{ ticket.title }}</p>
-                <p><span style="font-weight: bold">description</span> : {{ ticket.description }}</p>
-                <img src="{{ ticket.image.url }}" widht="300px" height="300px"><br>
+                <p><span style="font-weight: bold">description</span>
+                    : {{ ticket.description }}</p>
+                <img src="{{ ticket.image.url }}"
+                     widht="300px" height="300px"><br>
                 <p>{{ ticket.time_created }}</p>
-                <a href={% url 'update-ticket' ticket_id=ticket.id %}><button style="color: white; background: #ff7a00; border-radius: 5px; width: 200px; height: 40px; font-size: 20px">Modifier le ticket</button></a>
+                <a href={% url 'update_ticket' ticket_id=ticket.id %}>
+                    <button style="color: white; background: #ff7a00; border-radius: 5px; width: 200px; height: 40px; font-size: 20px">Modifier le ticket</button></a>
             </div>
             <hr>
         {% endfor %}
@@ -28,11 +31,15 @@
                 {{ review.time_created }}
                 <div style="border: 1px solid grey; margin-top: 30px">
                     <p style="font-weight: bold">Votre ticket :</p>
-                    <p><span style="font-weight: bold">Titre</span> : {{ review.ticket.title }}</p>
-                    <p><span style="font-weight: bold">description</span> : {{ review.ticket.description }}</p>
-                    <img src="{{ review.ticket.image.url }}" widht="300px" height="300px"><br>
+                    <p><span style="font-weight: bold">Titre</span>
+                        : {{ review.ticket.title }}</p>
+                    <p><span style="font-weight: bold">description</span>
+                        : {{ review.ticket.description }}</p>
+                    <img src="{{ review.ticket.image.url }}"
+                         widht="300px" height="300px"><br>
                     <p>{{ review.ticket.time_created }}</p>
-                <a href={% url 'update-review' review_id=review.id %}><button style="color: white; background: #ff7a00; border-radius: 5px; width: 200px; height: 40px; font-size: 20px; margin-bottom: 10px">Modifier la critique</button></a>
+                <a href={% url 'update_review' review_id=review.id %}>
+                    <button style="color: white; background: #ff7a00; border-radius: 5px; width: 200px; height: 40px; font-size: 20px; margin-bottom: 10px">Modifier la critique</button></a>
                 </div>
             </div>
         {% endfor %}

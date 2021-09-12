@@ -1,7 +1,6 @@
-from django.db import models
-from django.contrib.auth.models import AbstractUser
-from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth.models import AbstractUser
+from django.db import models
 
 
 # Create your models here.
@@ -23,8 +22,10 @@ class Ticket(models.Model):
 
 class UserFollows(models.Model):
     """UserFollows"""
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='following')
-    followed_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='followed_by')
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name='following')
+    followed_user = models.ForeignKey(User, on_delete=models.CASCADE,
+                                      related_name='followed_by')
 
     class Meta:
         unique_together = ('user', 'followed_user',)
@@ -32,8 +33,11 @@ class UserFollows(models.Model):
 
 class Review(models.Model):
     """Review class"""
-    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE, related_name="review")
-    rating = models.PositiveSmallIntegerField(max_length=1024, validators=[ MinValueValidator(0), MaxValueValidator(5)])
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE,
+                               related_name="review")
+    rating = models.PositiveSmallIntegerField\
+        (max_length=1024, validators=[ MinValueValidator(0),
+                                       MaxValueValidator(5)])
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     headline = models.CharField(max_length=128)
     body = models.TextField(max_length=8192, blank=True)
