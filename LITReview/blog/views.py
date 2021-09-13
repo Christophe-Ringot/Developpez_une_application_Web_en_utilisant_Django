@@ -199,3 +199,6 @@ def posts(request):
     return render(request, "posts.html",
                   {"reviews": reviews, "tickets": tickets})
 
+
+def handle_not_found(request, exception):
+    return render(request, '404.html')
