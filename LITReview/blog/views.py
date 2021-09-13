@@ -5,6 +5,7 @@ from .models import User, Ticket, UserFollows, Review
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.db import IntegrityError
+from django.contrib import messages
 from django.shortcuts import render
 from django.urls import reverse
 
@@ -17,10 +18,10 @@ def index(request):
         if user is not None:
             login(request, user)
             return HttpResponseRedirect(reverse("flux"))
-    elif request.user.is_authenticated:
-        return redirect("flux")
-    else:
-        return render(request, "index.html")
+        else:
+            messages.error(request, 'Mot de passe ou nom de compte incorrecte')
+            return render(request, "index.html")
+    return render(request, "index.html")
 
 
 def register(request):
@@ -30,16 +31,14 @@ def register(request):
         password = request.POST["password"]
         confirmation = request.POST["confirmation"]
         if password != confirmation:
-            return render(request, "register.html", {
-                "message": "Les mots de passe doivent correspondre."
-            })
+            messages.error(request, 'Les mots de passe ne correspondent pas.')
+            return render(request, "register.html")
         try:
             user = User.objects.create_user(username, email, password)
             user.save()
         except IntegrityError:
-            return render(request, "register.html", {
-                "message": "Nom d'utilisateur déjà prit."
-            })
+            messages.error(request, "Nom d'utilisateur déjà prit")
+            return render(request, "register.html")
         login(request, user)
         return HttpResponseRedirect(reverse("index"))
     else:

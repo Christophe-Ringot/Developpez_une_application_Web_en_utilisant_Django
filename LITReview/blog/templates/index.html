@@ -11,6 +11,13 @@
     </section>
 
     <section id="index_connection" style="margin-top: 150px">
+        {% if messages %}
+                {% for message in messages %}
+                   <div class="alert alert-danger">
+                       <strong>{{ message }}</strong>
+                   </div>
+                {% endfor %}
+        {% endif %}
         <h2>Connectez vous</h2>
         <form method="post">
             {% csrf_token %}

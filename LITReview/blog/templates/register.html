@@ -17,7 +17,9 @@
                    class="form-control"><br>
             <div class="row">
                 <div class="span6">
-                    <a href="{% url 'index' %}"><button>Retour</button></a>
+                    <a href="{% url 'index' %}">
+                        <input type="button" value="Retour" style="color: white; background: #ff7a00; border-radius: 5px; width: 250px; height: 35px; font-size: 25px; margin-bottom: 10px; margin-top: 10px">
+                    </a>
                     <button class="btn btn-large btn-primary">
                         S'inscrire
                     </button>
@@ -26,5 +28,11 @@
         </div>
         </form>
     </section>
-
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-danger" style="text-align: center; margin-top: -75px">
+                <strong>{{ message }}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
