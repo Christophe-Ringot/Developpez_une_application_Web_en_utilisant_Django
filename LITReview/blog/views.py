@@ -40,7 +40,7 @@ def register(request):
             messages.error(request, "Nom d'utilisateur déjà prit")
             return render(request, "register.html")
         login(request, user)
-        return HttpResponseRedirect(reverse("index"))
+        return HttpResponseRedirect(reverse("flux"))
     else:
         return render(request, "register.html")
 
