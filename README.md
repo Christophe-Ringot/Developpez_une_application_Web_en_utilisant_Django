@@ -28,7 +28,7 @@ Une fois que vous êtes sur la page d'accueil, vous pouvez vous connectez. Si vo
 
 Dès que vous êtes connectés, vous accéder à vos flux. Sur cette page, il est possible de répondre à un ticket, créer un ticket et créer une critique. On peut avoir accès aux autres pages:
 
-- "Post" qui permet de voir, modifier ou supprimer nos avis et ticket
+- "Post" qui permet de voir et modifier nos avis et tickets
 - "Abonnement" qui a pour but de suivre des personnes et voir les personnnes qui nous suivent
-- "Flux" qui affiche vos flux
+- "Accueil" qui affiche vos flux
 - "Se déconnecter" pour se déconnecter du site
