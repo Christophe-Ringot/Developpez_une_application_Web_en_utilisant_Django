@@ -4,7 +4,6 @@
 
 
 
-Ce projet consiste à créer une application web permettant de partager des avis et des critiques sur des livres.
 
 
 ## Installation
