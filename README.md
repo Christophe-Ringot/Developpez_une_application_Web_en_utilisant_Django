@@ -17,6 +17,8 @@ Ce projet consiste à créer une application web permettant de partager des avis
 
 ## Exécution
 
+- Se rendre sur le dossier avec la commande ```$ cd LITReview```
+
 - Lancez le serveur avec la commande ```$ python3 manage.py runserver```
 
 
