@@ -30,6 +30,13 @@
                         {% endif %}
                     </div>
                 {% endif %}
+                {% empty %}
+                    <article>
+                        <p>Il n'y a aucun ticket ou aucune review à
+                            afficher ici !</p>
+                        <p>Commencez par suivre des personnes ou créer
+                            un ticket ou une critique.</p>
+                    </article>
             {% endfor %}
 
             {% for review in reviews %}

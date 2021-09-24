@@ -18,8 +18,18 @@
                 <p>{{ ticket.time_created }}</p>
                 <a href={% url 'update_ticket' ticket_id=ticket.id %}>
                     <button style="color: white; background: #ff7a00; border-radius: 5px; width: 200px; height: 40px; font-size: 20px">Modifier le ticket</button></a>
+                <a href="{% url 'delete_ticket' ticket_id=ticket.id %}">
+                    <button style="color: white; background: #ff7a00; border-radius: 5px; width: 200px; height: 40px; font-size: 20px">Supprimer le ticket</button></a>
+                </a>
             </div>
             <hr>
+            {% empty %}
+                    <article>
+                        <p>Il n'y a aucun ticket ou aucune review à afficher
+                            ici !</p>
+                        <p>Commencez par suivre des personnes ou créer un
+                            ticket ou une critique.</p>
+                    </article>
         {% endfor %}
 
         {% for review in reviews %}
@@ -40,6 +50,9 @@
                     <p>{{ review.ticket.time_created }}</p>
                 <a href={% url 'update_review' review_id=review.id %}>
                     <button style="color: white; background: #ff7a00; border-radius: 5px; width: 200px; height: 40px; font-size: 20px; margin-bottom: 10px">Modifier la critique</button></a>
+                <a href="{% url 'delete_review' review_id=review.id %}">
+                    <button style="color: white; background: #ff7a00; border-radius: 5px; width: 200px; height: 40px; font-size: 20px">Supprimer la critique</button></a>
+                </a>
                 </div>
             </div>
         {% endfor %}

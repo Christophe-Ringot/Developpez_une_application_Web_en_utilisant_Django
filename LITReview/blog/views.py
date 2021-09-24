@@ -82,6 +82,13 @@ def update_review(request, review_id):
 
 
 @login_required
+def delete_review(request, review_id):
+    review = Review.objects.get(id=review_id)
+    review.delete()
+    return redirect('posts')
+
+
+@login_required
 def update_ticket(request, ticket_id):
     ticket = Ticket.objects.get(id=ticket_id)
     if request.method == "POST":
@@ -100,6 +107,13 @@ def update_ticket(request, ticket_id):
                                                 })
         return render(request, "update_ticket.html",
                       {"ticket": ticket, "form_ticket": form_ticket})
+
+
+@login_required
+def delete_ticket(request, ticket_id):
+    ticket = Ticket.objects.get(id=ticket_id)
+    ticket.delete()
+    return redirect('posts')
 
 
 @login_required
