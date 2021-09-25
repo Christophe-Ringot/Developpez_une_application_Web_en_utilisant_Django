@@ -12,4 +12,3 @@ class UploadReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ("headline", "body", "rating", "ticket", "user")
-

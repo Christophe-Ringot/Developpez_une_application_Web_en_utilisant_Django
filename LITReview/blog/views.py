@@ -5,6 +5,7 @@ from .models import User, Ticket, UserFollows, Review
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.db import IntegrityError
+from django.db.models import Q
 from django.contrib import messages
 from django.shortcuts import render
 from django.urls import reverse
@@ -172,6 +173,7 @@ def create_review(request):
             rating=request.POST["rating"],
             ticket=ticket
         )
+        print(form_review, headline, body, user, rating, review)
         return HttpResponseRedirect(reverse("posts"))
     else:
         form_ticket = UploadTicketForm(initial={"user": request.user})
@@ -200,16 +202,25 @@ def reply(request, id):
 
 @login_required
 def flux(request):
-    tickets = Ticket.objects.all
-    reviews = Review.objects.all
-    return render(request, "flux.html",
-                  {"tickets": tickets, "reviews": reviews})
+    followed_users = list(UserFollows.objects.filter(user=request.user)
+                          .values_list('followed_user__id', flat=True))
+    followed_users.append(request.user.id)
+    context = {
+        'tickets': Ticket.objects.filter
+        (user__id__in=followed_users).order_by('-time_created'),
+        'reviews': Review.objects.filter(Q(user__id__in=followed_users) |
+                                         Q(ticket__user=request.user)).order_by
+        ('-time_created')
+    }
+    return render(request, "flux.html", context)
 
 
 @login_required
 def posts(request):
-    reviews = Review.objects.filter(user=request.user)
-    tickets = Ticket.objects.filter(user=request.user)
+    reviews = Review.objects.filter(user=request.user)\
+        .order_by('-time_created')
+    tickets = Ticket.objects.filter(user=request.user)\
+        .order_by('-time_created')
     return render(request, "posts.html",
                   {"reviews": reviews, "tickets": tickets})
 

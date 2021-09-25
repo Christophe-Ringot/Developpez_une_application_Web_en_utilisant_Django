@@ -13,9 +13,18 @@
                            placeholder="Nom d'utilisateur"
                     style="width:500px; height: 35px; font-size: 20px">
                     <button id="button_search" style="vertical-align: top; height: 41px">Envoyer</button>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-danger" style="text-align: center; margin-top: -75px">
+                                <strong>{{ message }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </form>
         </section>
+
+
 
         <section id="subscribers" style="text-align: center; margin-top: 50px">
             <h2 style="margin-bottom: 35px; font-size: 25px">Abonnements</h2>

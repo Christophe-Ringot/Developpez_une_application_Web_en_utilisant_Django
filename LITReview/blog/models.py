@@ -35,9 +35,10 @@ class Review(models.Model):
     """Review class"""
     ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE,
                                related_name="review")
-    rating = models.PositiveSmallIntegerField\
-        (max_length=1024, validators=[ MinValueValidator(0),
-                                       MaxValueValidator(5)])
+    rating = models.PositiveSmallIntegerField(max_length=1024,
+                                              validators=[MinValueValidator(0),
+                                                          MaxValueValidator(5)]
+                                              )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     headline = models.CharField(max_length=128)
     body = models.TextField(max_length=8192, blank=True)
